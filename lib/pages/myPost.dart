@@ -27,15 +27,15 @@ class _MyPostPageState extends State<MyPostPage> {
       user = widget.user;
     });
     debugPrint("hello from init");
-    postService.getPosts().then((value) {
-      setState(() {
-        if (value != null) {
-          debugPrint("hello from value");
-          posts = value;
-          debugPrint("hello from value");
-        }
-      });
-    });
+    // postService.getPosts().then((value) {
+    //   setState(() {
+    //     if (value != null) {
+    //       debugPrint("hello from value");
+    //       posts = value;
+    //       debugPrint("hello from value");
+    //     }
+    //   });
+    // });
     postService.searchPostsById(user.id).then((value) {
       setState(() {
         if (value != null) {
@@ -49,7 +49,7 @@ class _MyPostPageState extends State<MyPostPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("PostPage"),
+        title: Text("My Posts"),
         // actions: [
         //   IconButton(
         //     icon: Icon(Icons.search),
